@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul class="left-menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">Lab</a>
+          <ul class="submenu">
+            <li><a href="lab1.html">Lab1</a></li>
+            <li><a href="lab2.html">Lab2</a></li>
+            <li><a href="lab3.html">Lab3</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="right-menu">
+        <li><a href="index.html" id="signOut">Sign Out</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Thông Tin Cá Nhân</h1>
+      <div id="userInfo"></div>
+    </div>
+
+    <script>
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      const userInfoDiv = document.getElementById("userInfo");
+
+      if (userInfo) {
+        userInfoDiv.innerHTML = `
+                <p><strong>Tên Đăng Nhập:</strong> ${userInfo.username}</p>
+                <p><strong>Email:</strong> ${userInfo.email}</p>
+                <p><strong>Tên Đầy Đủ:</strong> ${userInfo.fullname}</p>
+                <p><strong>Vai Trò:</strong> ${userInfo.role}</p>
+                <p><strong>Tài Khoản Được Tạo:</strong> ${userInfo.createdDate}</p>
+                <p><strong>Cập Nhật Lần Cuối:</strong> ${userInfo.updatedDate}</p>
+            `;
+      } else {
+        userInfoDiv.innerHTML = "<p>Không có thông tin tài khoản.</p>";
+      }
+
+      const signOutLink = document.getElementById("signOut");
+      signOutLink.onclick = function () {
+        localStorage.removeItem("loggedInUser");
+        alert("Bạn đã đăng xuất.");
+        window.location.href = "index.html";
+      };
+    </script>
+  </body>
+</html>

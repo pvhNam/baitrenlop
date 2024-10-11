@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Register Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul class="left-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Lab</a></li>
+      </ul>
+      <ul class="right-menu">
+        <li><a href="#" id="signIn">Sign In</a></li>
+        <li><a href="#" id="signOut">Sign Out</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div id="loginContainer">
+        <h1>Login</h1>
+        <form id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Login</button>
+        </form>
+        <div class="register-link">
+          <p>
+            Don't have an account?
+            <a href="#" id="showRegister" style="color: black">Register</a>
+          </p>
+        </div>
+      </div>
+
+      <div id="registerContainer" style="display: none">
+        <h1>Register</h1>
+        <form id="registerForm">
+          <label for="regUsername">Username:</label>
+          <input type="text" id="regUsername" name="regUsername" required />
+
+          <label for="regPassword">Password:</label>
+          <input type="password" id="regPassword" name="regPassword" required />
+
+          <label for="regEmail">Email:</label>
+          <input type="email" id="regEmail" name="regEmail" required />
+
+          <label for="regFullname">Full Name:</label>
+          <input type="text" id="regFullname" name="regFullname" required />
+
+          <label for="regRole">Role:</label>
+          <select id="regRole" name="regRole">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+
+          <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+          <p>
+            Already have an account?
+            <a href="#" id="showLogin" style="color: black">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const registerFormContainer =
+        document.getElementById("registerContainer");
+      const showRegister = document.getElementById("showRegister");
+      const loginContainer = document.getElementById("loginContainer");
+      const registerForm = document.getElementById("registerForm");
+      const showLogin = document.getElementById("showLogin");
+      const signInLink = document.getElementById("signIn");
+      const signOutLink = document.getElementById("signOut");
+
+      loginForm.onsubmit = function (event) {
+        event.preventDefault();
+        const userInfo = {
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        };
+        alert("Login successful!");
+        localStorage.setItem("loggedInUser", JSON.stringify(userInfo));
+        window.location.href = "home.html"; // Redirect to Home page
+      };
+
+      showRegister.onclick = function () {
+        loginContainer.style.display = "none"; // Hide login form
+        registerFormContainer.style.display = "block"; // Show register form
+      };
+
+      showLogin.onclick = function () {
+        registerFormContainer.style.display = "none"; // Hide register form
+        loginContainer.style.display = "block"; // Show login form
+      };
+
+      registerForm.onsubmit = function (event) {
+        event.preventDefault();
+        const newUserInfo = {
+          username: document.getElementById("regUsername").value,
+          password: document.getElementById("regPassword").value,
+          email: document.getElementById("regEmail").value,
+          fullname: document.getElementById("regFullname").value,
+          role: document.getElementById("regRole").value,
+          createdDate: new Date().toLocaleString(),
+          updatedDate: new Date().toLocaleString(),
+        };
+        localStorage.setItem("userInfo", JSON.stringify(newUserInfo));
+        alert("Registration successful! You can now login.");
+        showLogin.click();
+      };
+
+      signOutLink.onclick = function () {
+        localStorage.removeItem("loggedInUser");
+        alert("You have logged out.");
+        window.location.href = "index.html";
+      };
+    </script>
+  </body>
+</html>

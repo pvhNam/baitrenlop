@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Exercise System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .header h2 {
+        margin: 0;
+      }
+      input[type="text"],
+      input[type="password"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      .button:hover {
+        background-color: #3e8e41;
+      }
+      .exercise {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Login Screen -->
+    <div class="container" id="login-screen">
+      <div class="header">
+        <h2>Login</h2>
+      </div>
+      <input type="text" placeholder="Username/Email" />
+      <input type="password" placeholder="Password" />
+      <button class="button" onclick="showDashboard()">Login</button>
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <p>Simple, clean, and secure login screen.</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container" id="dashboard" style="display: none">
+      <div class="header">
+        <h2>Dashboard</h2>
+      </div>
+      <div class="exercise">
+        <h3>Exercise 1</h3>
+        <p>Short description of Exercise 1</p>
+        <p>Difficulty level: Easy</p>
+        <p>Time limit: 30 minutes</p>
+        <button class="button" onclick="showCodingEnvironment()">
+          Select Exercise
+        </button>
+      </div>
+      <div class="exercise">
+        <h3>Exercise 2</h3>
+        <p>Short description of Exercise 2</p>
+        <p>Difficulty level: Medium</p>
+        <p>Time limit: 1 hour</p>
+        <button class="button" onclick="showCodingEnvironment()">
+          Select Exercise
+        </button>
+      </div>
+      <!-- Add more exercises here -->
+    </div>
+
+    <!-- Coding Environment -->
+    <div class="container" id="coding-environment" style="display: none">
+      <div class="header">
+        <h2>Exercise Title</h2>
+        <p>Short description of the exercise.</p>
+      </div>
+      <div class="coding-environment">
+        <textarea placeholder="Write your code here..."></textarea>
+        <button class="button">Run Code</button>
+        <button class="button">Clear Code</button>
+        <button class="button" onclick="showSubmissionResults()">Submit</button>
+      </div>
+      <h2>Test Cases</h2>
+      <div>
+        <p>Input: ...</p>
+        <p>Expected Output: ...</p>
+        <p>Actual Output: ...</p>
+        <p>Status: Passed/Failed</p>
+      </div>
+    </div>
+
+    <!-- Submission Results -->
+    <div class="container" id="submission-results" style="display: none">
+      <div class="header">
+        <h2>Submission Results</h2>
+      </div>
+      <p>Status: Success/Failed</p>
+      <h3>Test Cases</h3>
+      <ul>
+        <li>
+          <p>Input: ...</p>
+          <p>Expected Output: ...</p>
+          <p>Actual Output: ...</p>
+          <p>Status: Passed/Failed</p>
+        </li>
+        <!-- Add more test cases here -->
+      </ul>
+      <p>Score: 10/10</p>
+      <p>Time Taken: 10 minutes</p>
+      <p>Memory Used: 100 MB</p>
+      <button class="button" onclick="tryAgain()">Try Again</button>
+      <button class="button" onclick="returnToDashboard()">
+        Return to Dashboard
+      </button>
+    </div>
+
+    <script>
+      function showDashboard() {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+      }
+
+      function showCodingEnvironment() {
+        document.getElementById("dashboard").style.display = "none";
+        document.getElementById("coding-environment").style.display = "block";
+      }
+
+      function showSubmissionResults() {
+        document.getElementById("coding-environment").style.display = "none";
+        document.getElementById("submission-results").style.display = "block";
+      }
+
+      function tryAgain() {
+        document.getElementById("submission-results").style.display = "none";
+        document.getElementById("coding-environment").style.display = "block";
+      }
+
+      function returnToDashboard() {
+        document.getElementById("submission-results").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

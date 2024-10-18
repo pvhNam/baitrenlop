@@ -1,69 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>Trang Chủ</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav>
-      <ul class="left-menu">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li>
-          <a href="#">Lab</a>
-          <ul class="submenu">
-            <li><a href="lab1.html">Lab1</a></li>
-            <li><a href="lab2.html">Lab2</a></li>
-            <li><a href="lab3.html">Lab3</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="right-menu">
-        <li><a href="index.html" id="signOut">Sign Out</a></li>
-      </ul>
-    </nav>
-
-    <div class="container">
-      <h1>Welcome, <span id="usernameDisplay"></span>!</h1>
-      <p>Email: <span id="emailDisplay"></span></p>
-      <p>Full Name: <span id="fullnameDisplay"></span></p>
-      <p>Role: <span id="roleDisplay"></span></p>
-      <p>Account Created: <span id="createdDateDisplay"></span></p>
-      <p>Last Updated: <span id="updatedDateDisplay"></span></p>
+    <div class="navbar">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Lab
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="lab1.html">Lab 1</a>
+          <a href="lab2.html">Lab 2</a>
+          <a href="lab3.html">Lab 3</a>
+        </div>
+      </div>
+      <a href="login.html" class="signout">Sign Out</a>
     </div>
 
-    <script>
-      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-      if (
-        !loggedInUser ||
-        !userInfo ||
-        loggedInUser.username !== userInfo.username
-      ) {
-        alert("You are not logged in. Redirecting to login page.");
-        window.location.href = "index.html";
-      } else {
-        document.getElementById("usernameDisplay").textContent =
-          userInfo.username;
-        document.getElementById("emailDisplay").textContent = userInfo.email;
-        document.getElementById("fullnameDisplay").textContent =
-          userInfo.fullname;
-        document.getElementById("roleDisplay").textContent = userInfo.role;
-        document.getElementById("createdDateDisplay").textContent =
-          userInfo.createdDate;
-        document.getElementById("updatedDateDisplay").textContent =
-          userInfo.updatedDate;
-      }
-
-      const signOutLink = document.getElementById("signOut");
-      signOutLink.onclick = function () {
-        localStorage.removeItem("loggedInUser");
-        alert("You have logged out.");
-        window.location.href = "index.html";
-      };
-    </script>
+    <div class="content">
+      <h1>Chào mừng đến với Trang Chủ</h1>
+      <p>Đây là trang chính sau khi bạn đăng nhập.</p>
+    </div>
   </body>
 </html>

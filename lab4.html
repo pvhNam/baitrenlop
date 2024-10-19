@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar {
+            background-color: #4A90E2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .menu-bar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }     font-family: "Inter", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar {
+            background-color: #4A90E2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .menu-bar a,
+        .menu-bar .dropbtn {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-bar a:hover,
+        .menu-bar .dropdown:hover .dropbtn {
+            background-color: #357ABD;
+            color: white;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4A90E2;
+            min-width: 160px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #357ABD;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .menu-bar .right a {
+            background-color: #4A90E2;
+            padding: 14px 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-bar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Lab
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="lab1.html">Lab 1</a>
+                <a href="lab2.html">Lab 2</a>
+                <a href="lab3.html">Lab 3</a>
+                <a href="lab4.html">Lab 4</a>
+            </div>
+        
+      </div>
+      <a href="index.html" class="left">Sign Out</a>
+    </div>
+
+    <header class="bg-white shadow">
+      <nav
+        class="container mx-auto px-4 py-2 flex justify-between items-center"
+      >
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Business Operations</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Cloud Computing</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Cybersecurity</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Data Science</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Development</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >IT Operations</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Language Learning</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Leadership & Management</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+        <div class="relative group">
+          <a
+            class="text-gray-700 hover:text-black border-b-2 border-transparent hover:border-gray-700"
+            href="#"
+            >Marketing</a
+          >
+          <div
+            class="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2"
+          >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 1</a
+            >
+            <a class="block px-4 py-2 text-gray-700 hover:bg-gray-200" href="#"
+              >Sub-item 2</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-6">
+      <section class="bg-white p-6 rounded-lg shadow mb-6">
+        <div class="flex items-center">
+          <div
+            class="bg-gray-800 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold"
+          >
+            N
+          </div>
+          <div class="ml-4">
+            <h1 class="text-2xl font-bold">Welcome back, Pham Van Hoai Nam</h1>
+            <a class="text-blue-600" href="#">Add occupation and interests</a>
+        </div>
+    </div>
+</section>
+<section class="bg-white p-6 rounded-lg shadow mb-6">
+    <div class="flex justify-between items-center">
+        <div>
+            <h2 class="text-xl font-bold">Weekly streak</h2>
+            <p>One ring down, one to go. Keep it up!</p>
+        </div>
+        <div class="flex items-center space-x-8">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-fire text-purple-600 text-2xl"></i>
+                <div>
+                    <p class="text-2xl font-bold">2</p>
+                    <p>weeks</p>
+                    <p>Current streak</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="relative">
+                    <svg class="w-12 h-12" viewBox="0 0 36 36">
+                        <path class="text-gray-300" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="4"></path>
+                        <path class="text-orange-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke-dasharray="30, 100" stroke-width="4"></path>
+                        <path class="text-green-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke-dasharray="10, 100" stroke-width="4"></path>
+                    </svg>
+                    <div >
+                        <p class="text-sm font-bold">11/30 course min</p>
+                        <p class="text-sm font-bold">4/1 visit</p>
+                    </div>
+                </div>
+                <div>
+                    <p> Oct 13 - 19</p>
+                </div>
+            </div>
+        </div>
+        <a class="text-blue-600" href="#">See all activity</a>
+    </div>
+</section>
+
+    
+                <h2 class="text-2xl font-bold mb-4">Pick up where you left off</h2>
+                <div class="flex space-x-4">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Courses</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learning paths</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Certification preparation</button>
+                </div>
+                <div class="mt-4 flex space-x-4 overflow-x-auto">
+                    <div class="bg-white p-4 rounded-lg shadow w-64">
+                        <div class="relative">
+                            <img alt="Course thumbnail" class="rounded-lg mb-4" height="144" src="https://media.baobinhphuoc.com.vn/upload/news/5_2022/z3451038308984_52cc9f40533c0aaa55e80c5458d72c24_13212829052022.jpg" width="256"/>
+                            <i class="fas fa-play-circle absolute top-2 left-2 text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold">FPT_ISMS Refresh Training S2 2024 (Vi...)</h3>
+                        <p>1. Introduction</p>
+                        <p class="text-gray-600">Lecture • 1m</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow w-64">
+                        <div class="relative">
+                            <img alt="Course thumbnail" class="rounded-lg mb-4" height="144" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy8DBVQ4NV7MoktG5E8PRnVipdCmyNRr5rKw&s" width="256"/>
+                            <i class="fas fa-play-circle absolute top-2 left-2 text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold">MuleSoft 4.X Complete Guide For Begi...</h3>
+                        <p>2. Integration introduction</p>
+                        <p class="text-gray-600">Lecture • 6m left</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow w-64">
+                        <div class="relative">
+                            <img alt="Course thumbnail" class="rounded-lg mb-4" height="144" src="https://cdn.bongdaplus.vn/Assets/Media/2016/10/23/13/anh-4.jpg" width="256"/>
+                            <i class="fas fa-question-circle absolute top-2 left-2 text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold">English Vocabulary: 504 Essential Wor...</h3>
+                        <p>7. Quiz and Questions</p>
+                        <p class="text-gray-600">Quiz • 9 questions</p>
+                    </div>
+                </div>
+          
+</section>
+</main>
+<div class="max-w-7xl mx-auto p-4">
+<div class="mb-6">
+ <h1 class="text-2xl font-bold">
+  Based on your certification interests, we recommend
+ </h1>
+ <a class="text-blue-600" href="#">
+  Edit certification interests
+ </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+ <div class="bg-white shadow-md rounded-lg overflow-hidden">
+  <img alt="Person standing in front of Java logo" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/ohJpccGzvXIlFpfmbYp1VCCm10ZLBBRL5G4Y9tH9ve5lcMoTA.jpg" width="600"/>
+  <div class="p-4">
+   <h2 class="text-lg font-semibold">
+    Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808
+   </h2>
+   <p class="text-gray-600">
+    Andrii Piatakha, Learn IT University
+   </p>
+   <div class="flex items-center mt-2">
+    <span class="text-yellow-500">
+     <i class="fas fa-star">
+     </i>
+     4.6
+    </span>
+    <span class="ml-2 text-gray-600">
+     (438)
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="bg-white shadow-md rounded-lg overflow-hidden">
+  <img alt="Illustration of certification badge" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/X7RZWvraG4LHNV3pY50JT9ykSzozL9giuWL4o2MEl6BIHD6E.jpg" width="600"/>
+  <div class="p-4">
+   <h2 class="text-lg font-semibold">
+    Oracle Java Certification - Pass the Associate 1Z0-808 Exam.
+   </h2>
+   <p class="text-gray-600">
+    Tim Buchalka's Learn Programming Academy, Goran...
+   </p>
+   <div class="flex items-center mt-2">
+    <span class="text-yellow-500">
+     <i class="fas fa-star">
+     </i>
+     4.6
+    </span>
+    <span class="ml-2 text-gray-600">
+     (5,906)
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="bg-white shadow-md rounded-lg overflow-hidden">
+  <img alt="Laptop and notebook on a desk" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/eJWpkoW6BJQMFyCL6N7qNobKQsO0sDRf9gqOy5AbiJGkcMoTA.jpg" width="600"/>
+  <div class="p-4">
+   <h2 class="text-lg font-semibold">
+    Complete Java SE 8 Developer Bootcamp - OCA Prep Included
+   </h2>
+   <p class="text-gray-600">
+    Intertech Training, Jeff Jensen
+   </p>
+   <div class="flex items-center mt-2">
+    <span class="text-yellow-500">
+     <i class="fas fa-star">
+     </i>
+     4.6
+    </span>
+    <span class="ml-2 text-gray-600">
+     (9,726)
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="bg-white shadow-md rounded-lg overflow-hidden">
+  <img alt="Illustration of a computer screen with Spring logo" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/2ec9H5aAUTSHZCDb3hzi64ep3nPV2cbbYCVVb1aJituhcMoTA.jpg" width="600"/>
+  <div class="p-4">
+   <h2 class="text-lg font-semibold">
+    Spring Professional Certification Exam Tutorial - Module 02
+   </h2>
+   <p class="text-gray-600">
+    Dominik Cebula
+   </p>
+   <div class="flex items-center mt-2">
+    <span class="text-yellow-500">
+     <i class="fas fa-star">
+     </i>
+     4.6
+    </span>
+    <span class="ml-2 text-gray-600">
+     (1,121)
+    </span>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="mt-8 p-6 border border-gray-300 rounded-lg text-center">
+ <div class="flex justify-center mb-4">
+  <i class="fas fa-user-circle text-yellow-500 text-4xl">
+  </i>
+ </div>
+ <h2 class="text-2xl font-semibold">
+  Personalize your learning experience
+ </h2>
+ <p class="text-gray-600 mb-4">
+  Add your occupation and interests to get better content recommendations.
+ </p>
+ <button class="bg-black text-white px-4 py-2 rounded">
+  Add occupation and interests
+ </button>
+</div>
+</div>
+
+      </section>
+    </main>
+  </body>
+</html>

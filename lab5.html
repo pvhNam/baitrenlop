@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .menu-bar {
+        background-color: #333;
+        overflow: hidden;
+      }
+      .menu-bar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+      .menu-bar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      .menu-bar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: #ddd;
+        color: black;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        z-index: 1;
+      }
+      .dropdown-content a {
+        float: none;
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      .dropdown-content a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .right {
+        float: right;
+      }
+      .content {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="menu-bar">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <button class="dropbtn">Lab</button>
+        <div class="dropdown-content">
+          <a href="lab1.html">Lab 1</a>
+          <a href="lab2.html">Lab 2</a>
+          <a href="lab3.html">Lab 3</a>
+          <a href="lab4.html">Lab 4</a>
+          <a href="lab5.html">lab 5</a>
+        </div>
+      </div>
+      <a href="index.html" class="right">Sign Out</a>
+    </div>
+
+    <div class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold">My Learning</h1>
+        <div class="flex items-center mt-2">
+          <span class="text-sm">87hr 36min watched</span>
+          <span class="mx-2">|</span>
+          <a class="text-sm underline" href="#">View all activity</a>
+        </div>
+        <div class="flex mt-4 space-x-4">
+          <a class="text-sm" href="lab5.html">All courses</a>
+          <a class="text-sm" href="learning-paths.html">Learning paths</a>
+          <a class="text-sm" href="certifications.html">Certifications</a>
+          <a class="text-sm" href="archived.html">Archived</a>
+          <a class="text-sm" href="learning-tools.html">Learning tools</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto mt-4">
+      <div class="flex justify-between items-center">
+        <div class="flex space-x-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="sort"
+              >Sort by</label
+            >
+            <select
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              id="sort"
+              name="sort"
+            >
+              <option>Recently Accessed</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700"
+              for="categories"
+              >Filter by</label
+            >
+            <select
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              id="categories"
+              name="categories"
+            >
+              <option>All Categories</option>
+              <option>Development</option>
+              <option>Design</option>
+              <option>Data Science</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700"
+              for="progress"
+              >Progress</label
+            >
+            <select
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              id="progress"
+              name="progress"
+            >
+              <option>All Progress</option>
+              <option>Completed</option>
+              <option>In Progress</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700"
+              for="instructor"
+              >Instructor</label
+            >
+            <select
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              id="instructor"
+              name="instructor"
+            >
+              <option>All Instructors</option>
+              <option>Instructor A</option>
+              <option>Instructor B</option>
+            </select>
+          </div>
+          <button class="mt-6 text-sm text-gray-700 underline">Reset</button>
+        </div>
+        <div class="relative">
+          <input
+            class="border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Search my courses"
+            type="text"
+          />
+          <button class="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <i class="fas fa-search text-gray-500"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-4 gap-4 mt-6">
+        <!-- Course 1 -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img
+            alt="Information Security Management System"
+            class="w-full h-32 object-cover rounded"
+            src="https://storage.googleapis.com/a1aa/image/dBNfVnedevf2MT0lzkfPUmMTn2eZ108mp1h33tff58Qp32eUnA.jpg"
+          />
+          <h2 class="mt-2 text-sm font-bold">
+            FPT_ISMS Refresh Training S2 2024 (Vietnamese)
+          </h2>
+          <p class="text-xs text-gray-500">FSOFT Content Development</p>
+          <div class="flex items-center mt-2">
+            <span class="text-xs text-gray-500">100% complete</span>
+            <div class="ml-auto flex items-center">
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <span class="ml-1 text-xs text-gray-500">Leave a rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img
+            alt="Spring Boot Development Bootcamp"
+            class="w-full h-32 object-cover rounded"
+            src="https://storage.googleapis.com/a1aa/image/eHFetanrI3o4U0if629z5X2eruOb5Rw48LpTJH8j95QLc7pOB.jpg"
+          />
+          <h2 class="mt-2 text-sm font-bold">
+            The Complete Spring Boot Development Bootcamp
+          </h2>
+          <p class="text-xs text-gray-500">
+            Learn The Part Inc., Rayan Slim, Jose...
+          </p>
+          <div class="flex items-center mt-2">
+            <span class="text-xs text-gray-500">100% complete</span>
+            <div class="ml-auto flex items-center">
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <span class="ml-1 text-xs text-gray-500">Leave a rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img
+            alt="Learn ExpressJS"
+            class="w-full h-32 object-cover rounded"
+            src="https://media.geeksforgeeks.org/wp-content/uploads/20240715124641/Expressjs-tutorial.webp"
+          />
+          <h2 class="mt-2 text-sm font-bold">Learn ExpressJS Fundamentals</h2>
+          <p class="text-xs text-gray-500">Kody Amour</p>
+          <div class="flex items-center mt-2">
+            <span class="text-xs text-gray-500">100% complete</span>
+            <div class="ml-auto flex items-center">
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <span class="ml-1 text-xs text-gray-500">Leave a rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img
+            alt="Spring & Hibernate"
+            class="w-full h-32 object-cover rounded"
+            src="https://javadeveloperzone.com/wp-content/uploads/2017/09/Spring-boot-hibernate-example-1-1024x488.jpg"
+          />
+          <h2 class="mt-2 text-sm font-bold">
+            Spring & Hibernate for Beginners (includes Spring Boot)
+          </h2>
+          <p class="text-xs text-gray-500">Chad Darby</p>
+          <div class="flex items-center mt-2">
+            <span class="text-xs text-gray-500">100% complete</span>
+            <div class="ml-auto flex items-center">
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <i class="fas fa-star text-yellow-500 text-xs"></i>
+              <span class="ml-1 text-xs text-gray-500">Leave a rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
